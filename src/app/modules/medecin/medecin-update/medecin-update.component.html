@@ -1,0 +1,28 @@
+<section>
+  <form [formGroup]="medecinForm" onsubmit="onSubmit()">
+    <div>
+      <mat-form-field for="nom" appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput id="nom" />
+    </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Prénom</mat-label>
+      <input matInput formControlName="prenom" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Horaires</mat-label>
+      <input matInput formControlName="horaires" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Spécialité</mat-label>
+      <mat-select formControlName="specialiteId" >
+        <!-- <mat-option [value]="spec.id">{{spec.libelle}}</mat-option> -->
+        <!-- <mat-option [value]="spec.id">{{spec.libelle}}</mat-option> -->
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-button type="submit" [disabled]="!medecinForm.valid">Ajouter</button>
+  </form>
+</section>
